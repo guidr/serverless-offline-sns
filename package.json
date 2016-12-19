@@ -1,6 +1,6 @@
 {
   "name": "serverless-offline-sns",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple implementation of a fake SNS server for serverless-offline",
   "main": "index.js",
   "scripts": {
