@@ -9,12 +9,13 @@ class OfflineSNS {
         const start = this.start.bind(this);
 
         this.commands = {
-            'offline-sns': {
+            sns: {
                 usage: 'Simulates SNS service to call your lambda functions offline.',
                 lifecycleEvents: ['start'],
                 commands: {
                     start: {
-                        usage: 'Starts SNS service offline using backward compatible initialization.'
+                        usage: 'Starts SNS service offline using backward compatible initialization.',
+                        lifecycleEvents: ['init']
                     }
                 },
                 options: {
@@ -33,7 +34,8 @@ class OfflineSNS {
         this.hooks = {
             'offline:start:init': start,
             'offline:start': start,
-            'offline-sns:start': start
+            'sns:start:init': start,
+            'sns:start': start
         };
     }
 
